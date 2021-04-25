@@ -6,11 +6,11 @@ import classes from './Home.module.css'
 import AuthContext from '../../context/auth-context'
 
 const Home = () => {
-  const ctx = useContext(AuthContext)
+  const { onLogout } = useContext(AuthContext)
   return (
     <Card className={classes.home}>
       <h1>Welcome back!</h1>
-      <Button onClick={ctx.onLogout}>Logout</Button>
+      <Button onClick={onLogout}>Logout</Button>
     </Card>
   )
 }

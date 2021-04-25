@@ -26,7 +26,7 @@ const passwordReducer = (state, action) => {
 }
 
 const Login = () => {
-  const ctx = useContext(AuthContext)
+  const { onLogin } = useContext(AuthContext)
 
   const [formIsValid, setFormIsValid] = useState(false)
 
@@ -71,7 +71,7 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault()
-    ctx.onLogin(emailState.value, passwordState.value)
+    onLogin(emailState.value, passwordState.value)
   }
 
   return (
